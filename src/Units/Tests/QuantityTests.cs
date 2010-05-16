@@ -106,9 +106,9 @@ namespace Units.Tests
 		[Test]
 		public void Multiplication_ByScalar_AmountIsMultiplied()
 		{
-			var currency = Bushels(2);
+			var quantity = Bushels(2);
 
-			var total = currency * 3;
+			var total = quantity * 3;
 
 			Expect(total.Amount == 6);
 		}
@@ -116,9 +116,9 @@ namespace Units.Tests
 		[Test]
 		public void Multiplication_ByScalar_KeepsUnits()
 		{
-			var currency = Bushels(2);
+			var quantity = Bushels(2);
 
-			var total = currency * 3;
+			var total = quantity * 3;
 
 			Expect(total.Unit == Unit.Bushels);
 		}
@@ -126,9 +126,9 @@ namespace Units.Tests
 		[Test]
 		public void Division_ByScalar_AmountIsDivided()
 		{
-			var currency = Bushels(6);
+			var quantity = Bushels(6);
 
-			var total = currency / 3;
+			var total = quantity / 3;
 
 			Expect(total.Amount == 2);
 		}
@@ -136,9 +136,9 @@ namespace Units.Tests
 		[Test]
 		public void Division_ByScalar_KeepsUnits()
 		{
-			var currency = Bushels(6);
+			var quantity = Bushels(6);
 
-			var total = currency / 3;
+			var total = quantity / 3;
 
 			Expect(total.Unit == Unit.Bushels);
 		}
@@ -169,9 +169,9 @@ namespace Units.Tests
 		[Test]
 		public void Modulus_ByScalar_ReturnsRemainder()
 		{
-			var currency = Bushels(6);
+			var quantity = Bushels(6);
 
-			var total = currency % 5;
+			var total = quantity % 5;
 
 			Expect(total.Amount == 1);
 		}
@@ -179,9 +179,9 @@ namespace Units.Tests
 		[Test]
 		public void Modulus_ByScalar_KeepsUnits()
 		{
-			var currency = Bushels(6);
+			var quantity = Bushels(6);
 
-			var total = currency % 5;
+			var total = quantity % 5;
 
 			Expect(total.Unit == Unit.Bushels);
 		}
@@ -189,9 +189,9 @@ namespace Units.Tests
 		[Test]
 		public void ImplicitCast_ResultIsAmount()
 		{
-			var currency = Bushels(1);
+			var quantity = Bushels(1);
 
-			decimal amount = currency;
+			decimal amount = quantity;
 
 			Expect(amount == 1m);
 		}
