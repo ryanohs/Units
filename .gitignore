@@ -1,0 +1,15 @@
+
+obj
+bin
+Bin
+deploy
+deploy/*
+_ReSharper.*
+*.ReSharper.user
+*.csproj.user
+*.resharper.user
+*.resharper
+*.suo
+*.cache
+~$*
+/src/.gitignore
