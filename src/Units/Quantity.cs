@@ -4,16 +4,27 @@
 
 	public class Quantity : IEquatable<Quantity>, IComparable<Quantity>, IComparable
 	{
-		public decimal Amount { get; protected set; }
-		public Unit Unit { get; protected set; }
+		private readonly decimal _Amount;
+		private readonly Unit _Unit;
+
+		public decimal Amount
+		{
+			get { return _Amount; }
+		}
+
+		public Unit Unit
+		{
+			get { return _Unit; }
+		}
 
 		public Quantity(decimal amount, Unit unit)
 		{
-			Amount = amount;
-			Unit = unit;
+			_Amount = amount;
+			_Unit = unit;
 		}
 
 		#region Arithmetic Operators
+
 		public static Quantity operator +(Quantity first, Quantity second)
 		{
 			RequireUnitsMatch(first, second);
@@ -50,10 +61,12 @@
 		public static Quantity operator %(Quantity quantity, decimal denominator)
 		{
 			return new Quantity(quantity.Amount % denominator, quantity.Unit);
-		} 
+		}
+
 		#endregion
 
 		#region Comparison Operators
+
 		public static bool operator ==(Quantity left, Quantity right)
 		{
 			return Equals(left, right);
@@ -82,7 +95,8 @@
 		public static bool operator >=(Quantity first, Quantity second)
 		{
 			return first.CompareTo(second) >= 0;
-		} 
+		}
+
 		#endregion
 
 		public static implicit operator decimal(Quantity quantity)
